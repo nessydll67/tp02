@@ -1,0 +1,24 @@
+
+#include <stdio.h>
+
+// Fonction récursive pour calculer la somme des éléments d'un tableau
+int sommeTableau(int tableau[], int taille) {
+    // Cas de base : Si la taille du tableau est 0, la somme est 0
+    if (taille == 0) {
+        return 0;
+    } else {
+        // Appel récursif pour la somme des éléments du tableau sauf le premier élément
+        return tableau[taille - 1] + sommeTableau(tableau, taille - 1);
+    }
+}
+
+int main() {
+    int notes[] = {85, 90, 78, 92, 88};
+    int taille = sizeof(notes) / sizeof(notes[0]);
+
+    int somme = sommeTableau(notes, taille);
+
+    printf("La somme des notes est : %d\n", somme);
+
+    return 0;
+}
